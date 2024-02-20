@@ -93,7 +93,4 @@ class EnigmaMachine:
 enigma = EnigmaMachine()
 enigma.set_positions([0, 0, 0])
 enigma.set_ring_settings([0, 0, 0])
-encrypted_text = enigma.encrypt("HELLO")
-print("Encrypted:", encrypted_text)
-decrypted_text = enigma.decrypt(encrypted_text)
-print("Decrypted:", decrypted_text)
+encrypted_text = enigma.encrypt("Stilicho")
