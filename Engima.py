@@ -68,29 +68,11 @@ class EnigmaMachine:
                 encrypted_message += char
         return encrypted_message
 
-    def decrypt_char(self, char):
-        self.rotate_rotors()
-        char = self.substitute(char, 0)
-        char = self.substitute(char, 1)
-        char = self.substitute(char, 2)
-        char = self.reflect(char)
-        char = self.substitute(char, 2, False)
-        char = self.substitute(char, 1, False)
-        char = self.substitute(char, 0, False)
-        return char
     
-
-    def decrypt(self, message):
-        decrypted_message = ""
-        for char in message.upper():
-            if char.isalpha():
-                decrypted_message += self.decrypt_char(char)
-            else:
-                decrypted_message += char
-        return decrypted_message
 
 # Example usage:
 enigma = EnigmaMachine()
 enigma.set_positions([0, 0, 0])
 enigma.set_ring_settings([0, 0, 0])
 encrypted_text = enigma.encrypt("Stilicho")
+print(encrypted_text)
